@@ -7,7 +7,7 @@
 ### TRAINING DATA
 
 ## Load the Olsen P data from McDowells and Mexico white paper data
-data_olsenP <- read.csv("data/Final_filtered_data_McDowell_Mexico.csv") %>% dplyr::select(OlsenP,Lat,Long)
+data_olsenP <- read.csv("/Users/nirwantandukar/Documents/Research/data/P_prediction/phenotypes/Final_filtered_data_McDowell_Mexico.csv") %>% dplyr::select(OlsenP,Lat,Long)
 data_olsenP <- data_olsenP[complete.cases(data_olsenP), ]
 colnames(data_olsenP)
 
@@ -48,7 +48,7 @@ for (raster_file in raster_files) {
 
 ### SAVE THE TRAINING DATA WITH PREDICTORS
 
-write.csv(data_olsenP, "output/Training_data_OlsenP_with_predictors.csv", row.names = FALSE)
+saveRDS(data_olsenP, "output/Training_data_OlsenP_with_predictors.RDS")
 
 
 

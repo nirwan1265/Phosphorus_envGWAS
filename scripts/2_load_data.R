@@ -16,7 +16,8 @@ colnames(data_olsenP)
 
 ### Load the predictors
 dir_raster <- "/Users/nirwantandukar/Documents/Research/data/P_prediction/predictors"
-
+# Old
+dir_raster <- "/Users/nirwantandukar/Library/Mobile Documents/com~apple~CloudDocs/Github/Phosphorus_prediction/data/phosphorus_prediction/predictors"
 # raster files:
 raster_files <- list.files(path = dir_raster, pattern = "\\.tif$", full.names = TRUE)
 
@@ -48,7 +49,7 @@ for (raster_file in raster_files) {
 
 ### SAVE THE TRAINING DATA WITH PREDICTORS
 
-saveRDS(data_olsenP, "output/Training_data_OlsenP_with_predictors.RDS")
+saveRDS(data_olsenP, "output/Training_data_OlsenP_with_predictors_old.RDS")
 
 
 

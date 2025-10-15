@@ -7,7 +7,7 @@
 ### TRAINING DATA
 
 ## Load the Olsen P data from McDowells and Mexico white paper data
-data_olsenP <- read.csv("/Users/nirwantandukar/Documents/Research/data/P_prediction/phenotypes/Final_filtered_data_McDowell_Mexico.csv") %>% dplyr::select(OlsenP,Lat,Long)
+data_olsenP <- read.csv("/Users/nirwantandukar/Documents/Research/data/P_prediction/phenotypes/Final_filtered_data_McDowell_Mexico_converted.csv") %>% dplyr::select(OlsenP,Lat,Long)
 data_olsenP <- data_olsenP[complete.cases(data_olsenP), ]
 colnames(data_olsenP)
 
@@ -17,7 +17,7 @@ colnames(data_olsenP)
 ### Load the predictors
 dir_raster <- "/Users/nirwantandukar/Documents/Research/data/P_prediction/predictors"
 # Old
-dir_raster <- "/Users/nirwantandukar/Library/Mobile Documents/com~apple~CloudDocs/Github/Phosphorus_prediction/data/phosphorus_prediction/predictors"
+# dir_raster <- "/Users/nirwantandukar/Library/Mobile Documents/com~apple~CloudDocs/Github/Phosphorus_prediction/data/phosphorus_prediction/predictors"
 # raster files:
 raster_files <- list.files(path = dir_raster, pattern = "\\.tif$", full.names = TRUE)
 
@@ -49,9 +49,7 @@ for (raster_file in raster_files) {
 
 ### SAVE THE TRAINING DATA WITH PREDICTORS
 
-saveRDS(data_olsenP, "output/Training_data_OlsenP_with_predictors_old.RDS")
-
-
+saveRDS(data_olsenP, "output/Training_data_OlsenP_with_predictors_with_conversion.RDS")
 
 
 
